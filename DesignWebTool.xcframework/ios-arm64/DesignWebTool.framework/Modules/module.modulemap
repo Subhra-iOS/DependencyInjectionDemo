@@ -1,0 +1,11 @@
+framework module DesignWebTool {
+  umbrella header "DesignWebTool.h"
+
+  export *
+  module * { export * }
+}
+
+module DesignWebTool.Swift {
+    header "DesignWebTool-Swift.h"
+    requires objc
+}

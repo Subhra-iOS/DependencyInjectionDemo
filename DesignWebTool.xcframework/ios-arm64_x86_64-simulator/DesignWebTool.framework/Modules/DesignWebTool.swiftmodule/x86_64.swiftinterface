@@ -1,0 +1,70 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name DesignWebTool
+@_exported import DesignWebTool
+import Foundation
+import Swift
+import UIKit
+import WebKit
+public struct WebToolModel {
+  public init(url: Foundation.URL, header: [Swift.String : Swift.String]? = nil, param: [Swift.String : Any]? = nil, method: Swift.String, uiModel: DesignWebTool.UIModel = UIModel(navBarColor: UIColor.systemBackground, navBarTextColor: UIColor.secondarySystemBackground, dismissBtnText: "Back", navBarTitle: "Design Tool"), selector: Swift.String? = nil)
+}
+public struct UIModel {
+  public init(navBarColor: UIKit.UIColor, navBarTextColor: UIKit.UIColor, dismissBtnText: Swift.String, navBarTitle: Swift.String)
+}
+@objc @_inheritsConvenienceInitializers public class DesignWebToolViewController : UIKit.UIViewController {
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func loadView()
+  @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @objc override dynamic public func didReceiveMemoryWarning()
+  @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension DesignWebToolViewController : WebKit.WKUIDelegate {
+  @objc dynamic public func webView(_ webView: WebKit.WKWebView, createWebViewWith configuration: WebKit.WKWebViewConfiguration, for navigationAction: WebKit.WKNavigationAction, windowFeatures: WebKit.WKWindowFeatures) -> WebKit.WKWebView?
+}
+extension DesignWebToolViewController : WebKit.WKNavigationDelegate, WebKit.WKScriptMessageHandler {
+  @objc dynamic public func webView(_ webView: WebKit.WKWebView, didFailProvisionalNavigation navigation: WebKit.WKNavigation!, withError error: Swift.Error)
+  @objc dynamic public func webView(_ webView: WebKit.WKWebView, didStartProvisionalNavigation navigation: WebKit.WKNavigation!)
+  @objc dynamic public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
+  @objc dynamic public func webView(_ webView: WebKit.WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WebKit.WKNavigation!)
+  @objc dynamic public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationResponse: WebKit.WKNavigationResponse, decisionHandler: @escaping (WebKit.WKNavigationResponsePolicy) -> Swift.Void)
+  @objc dynamic public func userContentController(_ userContentController: WebKit.WKUserContentController, didReceive message: WebKit.WKScriptMessage)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class SharedDesignToolController : DesignWebTool.DesignWebToolViewController {
+  convenience public init(model: DesignWebTool.WebToolModel, delegate: DesignWebTool.NavigationProtocol?)
+  @objc deinit
+}
+public enum Status {
+  case success
+  case failure
+  public static func == (a: DesignWebTool.Status, b: DesignWebTool.Status) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public enum Nib {
+}
+public protocol NavigationProtocol : ObjectiveC.NSObjectProtocol {
+  func popViewController(on: DesignWebTool.Status, data: Foundation.Data?)
+  func didBackNavigation()
+}
+public enum BarItemType : Swift.Int64 {
+  case rightBarItem
+  case leftBarItem
+  case flexibleBarItem
+  case disable
+  public typealias RawValue = Swift.Int64
+  public init?(rawValue: Swift.Int64)
+  public var rawValue: Swift.Int64 {
+    get
+  }
+}
+extension DesignWebTool.Status : Swift.Equatable {}
+extension DesignWebTool.Status : Swift.Hashable {}
+extension DesignWebTool.BarItemType : Swift.Equatable {}
+extension DesignWebTool.BarItemType : Swift.Hashable {}
+extension DesignWebTool.BarItemType : Swift.RawRepresentable {}
