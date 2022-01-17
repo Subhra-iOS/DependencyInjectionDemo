@@ -11,7 +11,6 @@
 		2A54128A278F0DF100BB7F11 /* CocoaLumberjackSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2A541289278F0DF100BB7F11 /* CocoaLumberjackSwift */; };
 		2A54128C278F0DF100BB7F11 /* CocoaLumberjack in Frameworks */ = {isa = PBXBuildFile; productRef = 2A54128B278F0DF100BB7F11 /* CocoaLumberjack */; };
 		2A54128E278F0DF100BB7F11 /* CocoaLumberjackSwiftLogBackend in Frameworks */ = {isa = PBXBuildFile; productRef = 2A54128D278F0DF100BB7F11 /* CocoaLumberjackSwiftLogBackend */; };
-		2A7502DA2794261800A12429 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AFD49302792C9D4005F741A /* APIKit.framework */; };
 		2A776B502785881B005F67BB /* DesignWebTool.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A776B4F2785881B005F67BB /* DesignWebTool.xcframework */; };
 		2A776B512785881B005F67BB /* DesignWebTool.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A776B4F2785881B005F67BB /* DesignWebTool.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2AA0F9B827623DC200F27BE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA0F9B727623DC200F27BE8 /* AppDelegate.swift */; };
@@ -170,7 +169,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A7502DA2794261800A12429 /* APIKit.framework in Frameworks */,
 				2AFD49672792F04F005F741A /* CourseListUIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
